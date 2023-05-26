@@ -1,5 +1,6 @@
 package labs.restapi;
 
+import jakarta.annotation.security.PermitAll;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +9,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import labs.entities.User;
@@ -15,12 +17,13 @@ import labs.models.Result;
 
 @Path("/user")
 @ApplicationScoped
+@PermitAll
 public class UserResource {
 
     @GET
     @Path("/get/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public User get(@NotNull Integer userId) {
+    public User get(@NotNull @PathParam("userId") Integer userId) {
 
         if (userId <= 0 || userId >= 100) {
             throw new NotFoundException("User not found");

@@ -10,4 +10,3 @@ labs\entities\User.class
 labs\apps\UtilApp.class
 labs\models\Result.class
 labs\jaxrs\ValidationExceptionMapper.class
-labs\jaxrs\WebAppExceptionMapper.class

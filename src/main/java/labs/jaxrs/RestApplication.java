@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.Application;
 import labs.restapi.ApiResource;
 import labs.restapi.AuthResource;
 import labs.restapi.TestResource;
+import labs.restapi.UserResource;
 
 @org.eclipse.microprofile.auth.LoginConfig(authMethod = "MP-JWT")
 @ApplicationScoped
@@ -20,10 +21,10 @@ public class RestApplication extends Application {
                 AuthResource.class,
                 TestResource.class,
                 ApiResource.class,
+                UserResource.class,
 
                 DefaultExceptionMapper.class,
-                ValidationExceptionMapper.class,
-                WebAppExceptionMapper.class
+                ValidationExceptionMapper.class
                 );
     }
 }
