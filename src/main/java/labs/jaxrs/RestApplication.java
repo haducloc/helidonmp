@@ -23,8 +23,8 @@ public class RestApplication extends Application {
                 ApiResource.class,
                 UserResource.class,
 
-                DefaultExceptionMapper.class,
-                ValidationExceptionMapper.class
+                DefaultExceptionMapper.class
+                
                 );
     }
 }
