@@ -17,8 +17,8 @@ import jakarta.ws.rs.core.MediaType;
 public class TestResource {
 
     @Inject
-    @ConfigProperty(name = "app.config1")
-    protected String config1;
+    @ConfigProperty(name = "app.myconfig")
+    protected String myconfig;
 
     @Inject
     protected JsonWebToken principal;

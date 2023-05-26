@@ -42,10 +42,7 @@ public class AuthResource {
         if ((!"locha".equalsIgnoreCase(username) && !"admin".equalsIgnoreCase(username))
                 || !"password".equals(password)) {
 
-            var result = new Result();
-            result.setCode(1);
-            result.setMessage("Invalid credentials");
-            return result;
+            return new Result().asError().message("Invalid credentials");
         }
 
         String[] userRoles = "locha".equalsIgnoreCase(username) ? new String[] { "user" } : new String[] { "admin" };
@@ -53,11 +50,7 @@ public class AuthResource {
         // JWT
         String jwt = generateJwt(username, userRoles, 45, TimeUnit.MINUTES);
 
-        var result = new Result();
-        result.setCode(1);
-        result.setMessage("Login Successfully");
-        result.setData(jwt);
-        return result;
+        return new Result().data(jwt).message("Login Successfully");
     }
 
     // JWT: RS256 & SHA256withRSA
@@ -88,14 +81,11 @@ public class AuthResource {
         return signer.sign(new JwtToken(header, payload));
     }
 
-    private static String loadKeyInPem(String keyFileName) {
+    private static String loadKeyInPem(String keyFileName) throws Exception {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(
                 AuthResource.class.getClassLoader().getResourceAsStream("META-INF/" + keyFileName)))) {
 
             return IOUtils.toString(reader);
-
-        } catch (Exception ex) {
-            return null;
         }
     }
 }

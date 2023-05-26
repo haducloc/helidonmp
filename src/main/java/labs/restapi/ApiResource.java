@@ -8,22 +8,21 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.SecurityContext;
 import labs.models.Result;
 
 @Path("/api")
 @ApplicationScoped
 public class ApiResource {
 
+    @Context
+    protected jakarta.ws.rs.core.SecurityContext context;
+
     @GET
     @Path("/user")
     @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed("user")
     public Result user() {
-
-        var result = new Result();
-        result.setMessage("user accessed");
-        return result;
+        return new Result().message("user access: " + context.getUserPrincipal());
     }
 
     @GET
@@ -31,16 +30,14 @@ public class ApiResource {
     @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed("admin")
     public Result admin() {
-        var result = new Result();
-        result.setMessage("admin accessed");
-        return result;
+        return new Result().message("admin access: " + context.getUserPrincipal());
     }
 
     @GET
     @Path("/security")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Authenticated
-    public String securityContext(@Context SecurityContext context) {
-        return "Hello, " + context.getUserPrincipal().getName();
+    public Result securityContext() {
+        return new Result().message("securityContext: " + context.getUserPrincipal());
     }
 }

@@ -1,4 +1,4 @@
-package labs.restapi;
+package labs.jaxrs;
 
 import com.appslandia.common.utils.ExceptionUtils;
 
@@ -14,11 +14,8 @@ public class DefaultExceptionMapper implements ExceptionMapper<Exception> {
 	@Override
 	public Response toResponse(Exception ex) {
 
-		var result = new Result ();
-		result.setCode(1);
-		result.setMessage(ExceptionUtils.buildMessage(ex));
-
-		return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(result)
+		return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+				.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
 				.type(MediaType.APPLICATION_JSON).build();
 	}
 }
