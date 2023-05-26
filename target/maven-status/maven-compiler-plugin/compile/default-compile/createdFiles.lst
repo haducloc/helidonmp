@@ -1,0 +1,9 @@
+labs\restapi\TestResource.class
+labs\restapi\AuthResource.class
+labs\restapi\DefaultExceptionMapper.class
+labs\restapi\RestApplication.class
+labs\apps\App.class
+labs\beans\JsonProcessorFactory.class
+labs\restapi\ApiResource.class
+labs\apps\UtilApp.class
+labs\models\Result.class
