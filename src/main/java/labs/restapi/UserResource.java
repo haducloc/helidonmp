@@ -1,7 +1,11 @@
 package labs.restapi;
 
+import javax.sql.DataSource;
+
 import jakarta.annotation.security.PermitAll;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import jakarta.ws.rs.Consumes;
@@ -19,6 +23,10 @@ import labs.models.Result;
 @ApplicationScoped
 @PermitAll
 public class UserResource {
+
+    @Inject
+    @Named("myds") 
+    private DataSource ds; 
 
     @GET
     @Path("/get/{userId}")
@@ -42,5 +50,17 @@ public class UserResource {
     public Result insert(@Valid User user) {
 
         return new Result().data(user.getUsername()).message("user inserted successfully.");
+    }
+
+    @GET
+    @Path("/conn")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Result testConn() throws Exception {
+
+        try (var conn = this.ds.getConnection()) {
+            String str = this.ds.getConnection().toString();
+
+            return new Result().data(str);
+        }
     }
 }

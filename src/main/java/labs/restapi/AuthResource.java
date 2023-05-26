@@ -48,7 +48,7 @@ public class AuthResource {
         String[] userRoles = "locha".equalsIgnoreCase(username) ? new String[] { "user" } : new String[] { "admin" };
 
         // JWT
-        String jwt = generateJwt(username, userRoles, 45, TimeUnit.MINUTES);
+        String jwt = generateJwt(username, userRoles, 120, TimeUnit.MINUTES);
 
         return new Result().data(jwt).message("Login Successfully");
     }
