@@ -8,6 +8,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
+import labs.apps.utils.ConstraintViolationUtil;
 import labs.models.Result;
 
 @Provider
@@ -24,8 +25,8 @@ public class DefaultExceptionMapper implements ExceptionMapper<Exception> {
 
 		} else if (ex instanceof ConstraintViolationException cve) {
 
-			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-					.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
+			return Response.status(Response.Status.BAD_REQUEST)
+					.entity(new Result().asError().message(ConstraintViolationUtil.buildMessage(cve)))
 					.type(MediaType.APPLICATION_JSON).build();
 
 		} else {
