@@ -1,4 +1,4 @@
-package labs.apps.scheduling;
+package labs.scheduling;
 
 import java.util.concurrent.TimeUnit;
 

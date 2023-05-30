@@ -8,8 +8,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
-import labs.apps.utils.ConstraintViolationUtil;
 import labs.models.Result;
+import labs.utils.ConstraintViolationUtil;
 
 @Provider
 public class DefaultExceptionMapper implements ExceptionMapper<Exception> {

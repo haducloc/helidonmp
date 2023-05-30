@@ -1,4 +1,4 @@
-package labs.apps.utils;
+package labs.utils;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
