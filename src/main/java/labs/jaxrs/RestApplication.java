@@ -6,6 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Application;
 import labs.restapi.ApiResource;
 import labs.restapi.AuthResource;
+import labs.restapi.ReactiveMessagingResource;
 import labs.restapi.TestResource;
 import labs.restapi.UserResource;
 
@@ -22,7 +23,8 @@ public class RestApplication extends Application {
                 TestResource.class,
                 ApiResource.class,
                 UserResource.class,
-
+                ReactiveMessagingResource.class,
+                
                 DefaultExceptionMapper.class
                 
                 );

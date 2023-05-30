@@ -19,19 +19,19 @@ public class DefaultExceptionMapper implements ExceptionMapper<Exception> {
 		if (ex instanceof WebApplicationException wae) {
 
 			return Response.status(wae.getResponse().getStatus())
-			.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
-			.type(MediaType.APPLICATION_JSON).build();
+					.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
+					.type(MediaType.APPLICATION_JSON).build();
 
 		} else if (ex instanceof ConstraintViolationException cve) {
-			
+
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-				.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
-				.type(MediaType.APPLICATION_JSON).build();
-				
+					.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
+					.type(MediaType.APPLICATION_JSON).build();
+
 		} else {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-				.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
-				.type(MediaType.APPLICATION_JSON).build();
-		}		
+					.entity(new Result().asError().message(ExceptionUtils.buildMessage(ex)))
+					.type(MediaType.APPLICATION_JSON).build();
+		}
 	}
 }

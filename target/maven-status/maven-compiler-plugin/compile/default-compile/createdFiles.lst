@@ -1,11 +1,15 @@
 labs\restapi\TestResource.class
 labs\restapi\AuthResource.class
+labs\beans\ReactiveMessagingConsumer.class
 labs\jaxrs\DefaultExceptionMapper.class
 labs\restapi\UserResource.class
 labs\apps\App.class
 labs\beans\JsonProcessorFactory.class
 labs\jaxrs\RestApplication.class
 labs\restapi\ApiResource.class
+labs\restapi\MessageResource.class
 labs\entities\User.class
 labs\apps\UtilApp.class
+labs\beans\ReactiveMessagingPublisher.class
+clients\RestClientApp.class
 labs\models\Result.class
