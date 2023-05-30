@@ -7,10 +7,12 @@ labs\jaxrs\DefaultExceptionMapper.class
 labs\restapi\UserResource.class
 labs\apps\App.class
 labs\beans\JsonProcessorFactory.class
+labs\entities\UserModel.class
 labs\apps\utils\ConstraintViolationUtil.class
 labs\jaxrs\RestApplication.class
 labs\restapi\ApiResource.class
 labs\entities\User.class
+labs\jaxrs\DefaultExceptionMapper1.class
 labs\apps\UtilApp.class
 labs\beans\ReactiveMessagingPublisher.class
 clients\RestClientApp.class

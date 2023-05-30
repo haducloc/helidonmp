@@ -17,6 +17,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import labs.entities.User;
+import labs.entities.UserModel;
 import labs.models.Result;
 
 @Path("/user")
@@ -47,9 +48,9 @@ public class UserResource {
     @Path("/insert")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Result insert(@Valid User user) {
+    public Result insert(@Valid UserModel user) {
 
-        return new Result().data(user.getUsername()).message("user inserted successfully.");
+        return new Result().data(user.getUser().getUsername()).message("user inserted successfully.");
     }
 
     @GET

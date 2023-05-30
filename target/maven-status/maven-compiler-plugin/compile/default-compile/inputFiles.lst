@@ -7,10 +7,12 @@ C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\models\Result.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\restapi\AuthResource.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\jaxrs\RestApplication.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\apps\App.java
+C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\jaxrs\DefaultExceptionMapper1.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\beans\ReactiveMessagingConsumer.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\jaxrs\DefaultExceptionMapper.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\entities\User.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\restapi\ReactiveMessagingResource.java
+C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\entities\UserModel.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\apps\utils\ConstraintViolationUtil.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\restapi\ApiResource.java
 C:\Workspace2\javaProjects\helidonmp\src\main\java\labs\apps\UtilApp.java
