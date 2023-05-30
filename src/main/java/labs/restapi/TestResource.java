@@ -34,6 +34,8 @@ public class TestResource {
     @Produces(MediaType.TEXT_PLAIN)
     @PermitAll
     public String hello() {
-        return "Hello world! JsonWebToken=" + principal + ", jaxrsContext=" + jaxrsContext.getUserPrincipal() + ", helidonContext=" + helidonContext.userPrincipal();
+        return "Hello world! JsonWebToken=" + principal 
+            + ", jaxrsContext=" + jaxrsContext.getUserPrincipal() 
+            + ", helidonContext=" + helidonContext.userPrincipal();
     }
 }
