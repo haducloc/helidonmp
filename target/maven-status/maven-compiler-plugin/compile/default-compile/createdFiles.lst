@@ -7,6 +7,7 @@ labs\jaxrs\DefaultExceptionMapper.class
 labs\restapi\UserResource.class
 labs\apps\App.class
 labs\beans\JsonProcessorFactory.class
+labs\apps\utils\ConstraintViolationUtil.class
 labs\jaxrs\RestApplication.class
 labs\restapi\ApiResource.class
 labs\entities\User.class
