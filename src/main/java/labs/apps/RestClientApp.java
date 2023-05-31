@@ -1,4 +1,4 @@
-package clients;
+package labs.apps;
 
 public class RestClientApp {
 
