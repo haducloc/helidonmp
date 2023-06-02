@@ -11,6 +11,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
+import labs.models.Result;
 
 @Path("/test")
 @ApplicationScoped
@@ -34,8 +35,16 @@ public class TestResource {
     @Produces(MediaType.TEXT_PLAIN)
     @PermitAll
     public String hello() {
-        return "Hello world! JsonWebToken=" + principal 
-            + ", jaxrsContext=" + jaxrsContext.getUserPrincipal() 
-            + ", helidonContext=" + helidonContext.userPrincipal();
+        return "Hello world! JsonWebToken=" + principal
+                + ", jaxrsContext=" + jaxrsContext.getUserPrincipal()
+                + ", helidonContext=" + helidonContext.userPrincipal();
+    }
+
+    @GET
+    @Path("/json")
+    @Produces(MediaType.APPLICATION_JSON)
+    @PermitAll
+    public Result json() {
+        return new Result().message("Hello world!");
     }
 }

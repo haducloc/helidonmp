@@ -5,42 +5,30 @@ public class Result {
 	private String message;
 	private Object data;
 
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
-
-	public int getCode() {
-		return code;
-	}
-
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public Result asError() {
 		return code(1);
 	}
 
-	public Result code(int value) {
-		this.code = value;
+	public int code() {
+		return this.code;
+	}
+
+	public Result code(int code) {
+		this.code = code;
 		return this;
+	}
+
+	public String message() {
+		return this.message;
 	}
 
 	public Result message(String message) {
 		this.message = message;
 		return this;
+	}
+
+	public Object data() {
+		return this.data;
 	}
 
 	public Result data(Object data) {

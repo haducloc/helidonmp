@@ -26,8 +26,8 @@ public class RestApplication extends Application {
                 ReactiveMessagingResource.class,
                 
                 DefaultExceptionMapper.class,
-                BeanValidationExceptionMapper.class
-                
+                BeanValidationExceptionMapper.class,
+                JsonbContextResolver.class
                 );
     }
 }
